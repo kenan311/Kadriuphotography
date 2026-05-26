@@ -53,11 +53,11 @@ export default function Navigation() {
           ? 'border border-white/70 bg-white/95 shadow-lg shadow-charcoal-900/10 backdrop-blur-md'
           : 'border border-white/15 bg-charcoal-900/10 backdrop-blur-sm'
       }`}>
-          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Kadriu Photography">
+          <Link href="/" className="flex min-w-0 items-center gap-2.5" aria-label="Kadriu Photography">
             <img
               src="/kadriu-logo.png"
               alt="Kadriu Photography Logo"
-              className="h-12 w-12 shrink-0 object-contain drop-shadow-sm"
+              className="h-14 w-14 shrink-0 object-contain drop-shadow-sm sm:h-[58px] sm:w-[58px]"
             />
             <span className={`hidden truncate font-luxury text-xl font-bold tracking-wide sm:block ${
               solidNav ? 'text-charcoal-900' : 'text-white'
