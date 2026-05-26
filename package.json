@@ -2,12 +2,15 @@
   "name": "wedding-photography-platform",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "build:css": "tailwindcss -i ./app/globals.css -o ./public/site-fallback.css --minify",
     "predev": "npm run build:css",
     "postinstall": "prisma generate",
     "dev": "next dev",
-    "build": "npm run build:css && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "db:init": "node scripts/init-db.mjs",
