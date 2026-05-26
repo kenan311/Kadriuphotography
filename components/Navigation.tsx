@@ -57,7 +57,7 @@ export default function Navigation() {
             <img
               src="/kadriu-logo-nav.png"
               alt="Kadriu Photography Logo"
-              className="h-14 w-auto max-w-[132px] shrink-0 object-contain drop-shadow-sm sm:h-[58px] sm:max-w-[138px]"
+              className="h-11 w-auto max-w-[102px] shrink-0 object-contain drop-shadow-sm sm:h-12 sm:max-w-[112px]"
             />
             <span className={`hidden truncate font-luxury text-xl font-bold tracking-wide sm:block ${
               solidNav ? 'text-charcoal-900' : 'text-white'
