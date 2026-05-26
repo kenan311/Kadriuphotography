@@ -48,16 +48,16 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className="fixed left-0 right-0 top-3 z-50 px-3 transition-all duration-300"
     >
-      <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full px-4 transition-all duration-300 sm:px-6 ${
+      <div className={`relative mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full px-4 transition-all duration-300 sm:px-6 ${
         solidNav
           ? 'border border-white/70 bg-white/95 shadow-lg shadow-charcoal-900/10 backdrop-blur-md'
           : 'border border-white/15 bg-charcoal-900/10 backdrop-blur-sm'
       }`}>
-          <Link href="/" className="flex min-w-0 items-center gap-2.5" aria-label="Kadriu Photography">
+          <Link href="/" className="absolute left-1/2 flex min-w-0 -translate-x-1/2 items-center gap-2.5 sm:static sm:translate-x-0" aria-label="Kadriu Photography">
             <img
-              src="/kadriu-logo.png"
+              src="/kadriu-logo-nav.png"
               alt="Kadriu Photography Logo"
-              className="h-14 w-14 shrink-0 object-contain drop-shadow-sm sm:h-[58px] sm:w-[58px]"
+              className="h-[62px] w-auto max-w-[150px] shrink-0 object-contain drop-shadow-sm sm:h-[62px] sm:max-w-[154px]"
             />
             <span className={`hidden truncate font-luxury text-xl font-bold tracking-wide sm:block ${
               solidNav ? 'text-charcoal-900' : 'text-white'
