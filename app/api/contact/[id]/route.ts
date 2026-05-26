@@ -5,6 +5,7 @@ import { contactMessageToRecord } from '@/lib/booking'
 import { prisma } from '@/lib/prisma'
 
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 const updateSchema = z.object({
   isRead: z.boolean(),

@@ -5,6 +5,7 @@ import { bookingToRecord } from '@/lib/booking'
 import { prisma } from '@/lib/prisma'
 
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 const addOnSchema = z.object({
   id: z.string().min(1),

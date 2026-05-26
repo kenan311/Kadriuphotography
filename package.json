@@ -5,6 +5,7 @@
   "scripts": {
     "build:css": "tailwindcss -i ./app/globals.css -o ./public/site-fallback.css --minify",
     "predev": "npm run build:css",
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "npm run build:css && next build",
     "start": "next start",
