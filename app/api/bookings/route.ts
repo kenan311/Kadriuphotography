@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { isAdminRequest } from '@/lib/admin-auth'
 import { bookingToRecord } from '@/lib/booking'
-import { prisma } from '@/lib/prisma'
+import { ensureDatabase, prisma } from '@/lib/prisma'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -47,6 +47,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ message: 'Nuk keni qasje në admin.' }, { status: 401 })
   }
 
+  await ensureDatabase()
+
   const bookings = await prisma.booking.findMany({
     orderBy: { createdAt: 'desc' },
     take: 100,
@@ -59,6 +61,8 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
+    await ensureDatabase()
+
     const body = await request.json()
     const payload = bookingSchema.parse(body)
 

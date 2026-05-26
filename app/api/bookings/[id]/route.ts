@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { isAdminRequest } from '@/lib/admin-auth'
 import { bookingToRecord } from '@/lib/booking'
-import { prisma } from '@/lib/prisma'
+import { ensureDatabase, prisma } from '@/lib/prisma'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -17,6 +17,8 @@ export async function PATCH(request: Request, { params }: { params: { id: string
   }
 
   try {
+    await ensureDatabase()
+
     const body = await request.json()
     const payload = updateSchema.parse(body)
 
@@ -41,6 +43,8 @@ export async function DELETE(_request: Request, { params }: { params: { id: stri
   }
 
   try {
+    await ensureDatabase()
+
     await prisma.booking.delete({
       where: { id: params.id },
     })
