@@ -22,6 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sq-XK">
+      <head>
+        <link rel="stylesheet" href="/site-fallback.css" />
+      </head>
       <body className="font-sans antialiased">
         {children}
       </body>
